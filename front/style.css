@@ -1,0 +1,63 @@
+/* 全局基础排版：铺满视口并去掉默认边距 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow: hidden;
+  color: #f5f7ff;
+  background:
+    radial-gradient(circle at 20% 20%, #1c2a52 0%, transparent 45%),
+    radial-gradient(circle at 80% 75%, #3b1f5e 0%, transparent 50%),
+    #080a12;
+  font-family:
+    "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system,
+    sans-serif;
+}
+
+/* 主标题：居中显示，字号随视口自适应 */
+.title {
+  margin: 0;
+  text-align: center;
+  text-wrap: balance;
+  font-size: clamp(2rem, 7vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: linear-gradient(
+    100deg,
+    #8ab4ff,
+    #c49bff 35%,
+    #ff9ecb 65%,
+    #8ab4ff
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+/* 标题渐变色缓慢流动，营造 vibecoding 的动态氛围 */
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* 尊重系统“减少动态效果”偏好，关闭动画 */
+@media (prefers-reduced-motion: reduce) {
+  .title {
+    animation: none;
+  }
+}

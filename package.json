@@ -1,0 +1,10 @@
+{
+  "name": "hello-claude",
+  "version": "1.0.0",
+  "description": "使用 Node.js 原生 http 模块提供的前端页面：hello claude vibecoding",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.js"
+  }
+}
